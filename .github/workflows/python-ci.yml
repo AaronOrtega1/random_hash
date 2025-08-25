@@ -1,15 +1,12 @@
 name: Python CI
 
-on:
-  push:
-    branches: ["main"]
+on: [push]
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repo
-        uses: actions/checkout@v2
+      - uses: actions/checkout@v2
 
       - name: Set up Python 3.11
         uses: actions/setup-python@v1
@@ -18,4 +15,4 @@ jobs:
 
       - name: Run script
         run: |
-          python random_hash.py
+          python ../../random_hash.py
